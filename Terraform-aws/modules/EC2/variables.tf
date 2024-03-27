@@ -31,3 +31,8 @@ variable "subnet_id" {
   type        = string
   description = "instance subnet id"
 }
+
+variable "security_group_ids" {
+  description = "List of security group IDs to attach to the EC2 instance."
+  type        = list(string)
+}

@@ -80,6 +80,14 @@ resource "aws_security_group" "SG_valheim" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 
+    ingress { 
+        description = "HTTP"
+        from_port = 2456
+        to_port = 2457
+        protocol = "udp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
     egress {
         from_port = 0
         to_port = 0

@@ -14,17 +14,6 @@ sudo mount /dev/xvdf /mnt/ebs_volume
 
 #sudo mkdir -p /mnt/ebs_volume/valheim-server/config/worlds_local /mnt/ebs_volume/valheim-server/data
 # copy existing world
-sudo docker run -d \
-    --name valheim-server \
-    --cap-add=sys_nice \
-    --stop-timeout 120 \
-    -p 2456-2457:2456-2457/udp \
-    -v /mnt/ebs_volume/valheim-server/config:/config \
-    -v /mnt/ebs_volume/valheim-server/data:/opt/valheim \
-    -e SERVER_NAME="Sancal" \
-    -e WORLD_NAME="Sancal" \
-    -e SERVER_PUBLIC="true" \
-    -e SERVER_PASS="secretPassword" \
-    -e STATUS_HTTP="true" \
-    ghcr.io/lloesche/valheim-server
-
+cd /mnt/ebs_volume/valheim-server
+sudo curl -o /mnt/ebs_volume/valheim-server/docker-compose.yaml https://raw.githubusercontent.com/MassoniMacaroni/valheim/main/docker-compose.yaml
+sudo docker-compose up

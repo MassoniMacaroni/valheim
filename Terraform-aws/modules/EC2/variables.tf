@@ -36,3 +36,9 @@ variable "security_group_ids" {
   description = "List of security group IDs to attach to the EC2 instance."
   type        = list(string)
 }
+
+variable "volume_id" {
+  type        = string
+  description = "instance subnet id"
+  default = "vol-0f0c4e69f8b500d8d"
+}

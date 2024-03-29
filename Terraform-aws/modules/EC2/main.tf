@@ -3,6 +3,7 @@ resource "aws_instance" "ec2_instance" {
   instance_type = var.instance_type
   count         = var.instance_count
   user_data = base64encode(file("${path.module}/userData.sh")) 
+  key_name = var.key_name
 
   root_block_device {
     volume_size = var.volume-size  # Size in GB

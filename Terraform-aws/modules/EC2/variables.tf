@@ -12,7 +12,7 @@ variable "ami_id" {
 variable "instance_type" {
   type        = string
   description = "Instance type of the ec2 instance"
-  default = "t2.micro"
+  default = "t3.medium"
 }
 
 variable "instance_count" {
@@ -41,4 +41,10 @@ variable "volume_id" {
   type        = string
   description = "instance subnet id"
   default = "vol-0f0c4e69f8b500d8d"
+}
+
+variable "key_name" {
+  type        = string
+  description = "Key pair name assigned a EC2 launch"
+  default = "valheimKey"
 }

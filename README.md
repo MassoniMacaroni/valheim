@@ -9,4 +9,4 @@ My rough plan to get Valheim running in an AWS instance.
 - [ ]  Figure out how to get this all running on Kubernetes
 
 
-I was able to achieve what I had set out to on this project - setup and configure a valheim instance on ec2 with terraform. The current terraform in this repo will configure the right infrastructure for an ec2 instance to run in but there are ultimately some issues with destroying the valheim container and its interaction with persistent storage for world saves that have lead to me moving on from this project
+I was able to achieve what I had set out to on this project - setup and configure a valheim instance on ec2 with terraform. The current terraform in this repo will configure the right infrastructure for an ec2 instance to run in but there are ultimately some issues with destroying the valheim container and its interaction with persistent storage for world saves that have lead to me moving on from this project for now.

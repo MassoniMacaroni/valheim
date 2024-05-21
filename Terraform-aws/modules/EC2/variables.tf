@@ -39,8 +39,8 @@ variable "security_group_ids" {
 
 variable "volume_id" {
   type        = string
-  description = "instance subnet id"
-  default = "vol-0f0c4e69f8b500d8d"
+  description = "EBS volume id"
+  default = "vol-07dce574c11e0e2ea"
 }
 
 variable "key_name" {

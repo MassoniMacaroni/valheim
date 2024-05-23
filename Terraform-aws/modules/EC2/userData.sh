@@ -53,7 +53,7 @@ if [ ! -f "$ENVFILE" ]; then
     # File does not exist
     sudo bash -c "cat > '$ENVFILE' <<EOF
 SERVER_NAME=Jonos Server
-WORLD_NAME=Dedicated
+WORLD_NAME=Sancal
 SERVER_PASS=JonoSecret
 SERVER_PUBLIC=true
 EOF"

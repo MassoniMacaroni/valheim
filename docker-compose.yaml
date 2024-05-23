@@ -11,5 +11,9 @@ services:
       - "9001:9001/tcp"
     env_file:
       - /mnt/ebs_volume/valheim-server/valheim.env
+    environment:
+      - DISCORD_WEBHOOK=https://discord.com/api/webhooks/1223128455877496932/s2Eebpx6uMugV4SUHImQGKHV64CxC97SHrN3c9sg78S9GQ0KGSikJ8f9Fl40Z0trRsNj
+      - DISCORD_MESSAGE=Starting Valheim server $$SERVER_NAME
+      - 'PRE_BOOTSTRAP_HOOK=curl -sfSL -X POST -H "Content-Type: application/json" -d "{\"username\":\"Valheim\",\"content\":\"$$(eval echo $$DISCORD_MESSAGE)\"}" "$$DISCORD_WEBHOOK"'
     restart: always
     stop_grace_period: 2m

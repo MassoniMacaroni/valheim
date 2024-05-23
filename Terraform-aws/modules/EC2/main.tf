@@ -26,3 +26,12 @@ resource "aws_volume_attachment" "ebs_att" {
   volume_id   = var.volume_id
   instance_id = aws_instance.ec2_instance[0].id
 }
+
+resource "null_resource" "stop_docker" {
+  provisioner "local-exec" {
+    when    = destroy
+    command = "ssh -i ${var.private_key_path} ec2-user@${aws_instance.ec2_instance[0].public_ip} 'bash docker stop valheim-server-valheim-1'"
+  }
+
+  depends_on = [aws_instance.ec2_instance]
+}

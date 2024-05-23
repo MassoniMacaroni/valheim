@@ -48,3 +48,8 @@ variable "key_name" {
   description = "Key pair name assigned a EC2 launch"
   default = "valheimKey"
 }
+
+variable "private_key_path" {
+  type        = string
+  description = "Path to the private key for SSH"
+}
